@@ -1,5 +1,13 @@
 Revision history for gxcommon
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+0.01    1-Feb-2015
+        First version, initialized repos under a CPAN structure with module-builder
+	File changes will be tracked with git
+	Two git repositories: one for the CPAN structure, and another for the /src (submodule) which I expect to grow quite a bit over time in respect to the main repo
+	The MANIFEST will be kept up to date to reflect BOTH repos
+	Changes will only be logged here, and the LICENSE applies to both repositories
+	Qxterm.h, Qxterm.cpp - the first common class to hit the streets - an xterm embedding widget for QT (and perl-qt) applications
+	Qxterm.pm not planned at this time but the name is reserved for this use only
+	.gitignore created, should ignore all swap, temp, and backup files
+
 

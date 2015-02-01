@@ -3,16 +3,36 @@
 
 #include <QWidget>
 
-class Qxterm : public QWidget
+
+class QProcess;
+
+class Terminal : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit Qxterm(QWidget *parent = 0);
-    
-signals:
-    
+    Terminal(QWidget * = 0);
+    ~Terminal();
+
+    bool isRunning();
+
 public slots:
-    
+    bool start();
+    bool tryTerminate();
+
+protected slots:
+    void termProcessExited();
+
+signals:
+    void exited();
+
+protected:
+    void closeEvent(QCloseEvent *);
+    void resizeEvent(QResizeEvent *);
+
+private:
+    int cols, rows;
+    QProcess *termProcess;
 };
 
 #endif // QXTERM_H
